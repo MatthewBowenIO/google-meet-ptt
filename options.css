@@ -1,0 +1,30 @@
+.center {
+    margin: auto;
+    width: 50%;
+}
+
+#foregroundContainer {
+	float: left;
+	width: 49%;
+}
+
+#backgroundContainer {
+	float: right;
+	width: 49%;
+}
+
+#hand {
+	font-size: 300px; 
+	width: 100%; 
+	height:300px;
+	text-align: center; 
+	margin-bottom: 10px;
+}
+
+#handContainer {
+	margin-bottom: 10px;
+}
+
+input {
+	width: 100%;
+}

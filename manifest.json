@@ -1,0 +1,36 @@
+{
+  "name": "Google Meet PTT",
+  "description": "Press and hold ctrl or whatever key you set to talk!",
+  "version": "1.2",
+  "manifest_version": 2,
+  "author": "Matthew Bowen",
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "icons": { 
+    "32": "images/icon32.png",
+    "64": "images/icon64.png",
+    "128": "images/icon128.png",
+    "256": "images/icon256.png"
+  },
+  "content_scripts": [{
+    "matches": ["*://*.meet.google.com/*"],
+    "js": ["content.js"]
+  }],
+  "browser_action": {
+    "default_popup": "browser_action.html"
+  },
+  "commands": {
+    "toggle-feature": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+Z",
+        "mac": "MacCtrl+Shift+Z"
+       },
+      "description": "Send a 'toggle-feature' event to the extension"
+    }
+  },
+  "options_page": "options.html",
+  "permissions": ["activeTab", "storage"],
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+}
